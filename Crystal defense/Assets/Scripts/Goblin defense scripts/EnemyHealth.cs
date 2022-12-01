@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Enemy))]
-public class EnemyHealth : MonoBehaviour, IDamageble, IKill
+public class EnemyHealth : MonoBehaviour, IDamageable, IKill
 {
     [SerializeField] float health = 100;
     [SerializeField] float ballistaDamage = 10;
