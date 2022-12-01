@@ -1372,7 +1372,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 296844130}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 608814893}
+        m_TargetAssemblyTypeName: UiScript, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &296844130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1947,11 +1959,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c453ec8bef3715f41abc2b1d64a18b8a, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -2040,13 +2052,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 538640525}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1935.8157, y: 1134.5574, z: -39.11448}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &574555071
 GameObject:
@@ -2194,6 +2206,7 @@ GameObject:
   - component: {fileID: 608814890}
   - component: {fileID: 608814892}
   - component: {fileID: 608814891}
+  - component: {fileID: 608814893}
   m_Layer: 5
   m_Name: MainPanel
   m_TagString: Untagged
@@ -2264,6 +2277,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608814889}
   m_CullTransparentMesh: 1
+--- !u!114 &608814893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 608814889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59520ac15b1f4e145a332b23f7ae49e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIpanels:
+  - {fileID: 1795082839}
+  - {fileID: 608814889}
+  activeButton: {fileID: 1140081601}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,7 +3096,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1140081602}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 608814893}
+        m_TargetAssemblyTypeName: UiScript, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1140081602
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3609,7 +3650,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1438154272}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1795082843}
+        m_TargetAssemblyTypeName: UiScript, Assembly-CSharp
+        m_MethodName: OpenPanel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1795082843}
+        m_TargetAssemblyTypeName: UiScript, Assembly-CSharp
+        m_MethodName: ClosePanel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1438154272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3898,6 +3963,7 @@ GameObject:
   - component: {fileID: 1795082840}
   - component: {fileID: 1795082842}
   - component: {fileID: 1795082841}
+  - component: {fileID: 1795082843}
   m_Layer: 5
   m_Name: SettingsPanel
   m_TagString: Untagged
@@ -3976,6 +4042,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1795082839}
   m_CullTransparentMesh: 1
+--- !u!114 &1795082843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1795082839}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59520ac15b1f4e145a332b23f7ae49e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UIpanels:
+  - {fileID: 1795082839}
+  - {fileID: 608814889}
+  activeButton: {fileID: 1438154271}
 --- !u!1 &1798866481
 GameObject:
   m_ObjectHideFlags: 0
@@ -4438,7 +4520,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1948849178}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 608814893}
+        m_TargetAssemblyTypeName: UiScript, Assembly-CSharp
+        m_MethodName: OpenPanel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 608814893}
+        m_TargetAssemblyTypeName: UiScript, Assembly-CSharp
+        m_MethodName: ClosePanel
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1948849178
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4543,5 +4649,5 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
