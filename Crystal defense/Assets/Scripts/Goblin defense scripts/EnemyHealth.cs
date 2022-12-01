@@ -25,7 +25,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable, IKill
     {
         currentHealth = health;
 
-        healthBar.UpdateHealthBar(health, currentHealth);
+        //healthBar.UpdateHealthBar(health, currentHealth);
     }
 
     private void Start()
@@ -49,7 +49,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable, IKill
     public void Damage(float damage)
     {
         currentHealth = currentHealth - damage;
-        healthBar.UpdateHealthBar(health, currentHealth);
+        //healthBar.UpdateHealthBar(health, currentHealth);
 
         if (currentHealth <= 0)
         {
