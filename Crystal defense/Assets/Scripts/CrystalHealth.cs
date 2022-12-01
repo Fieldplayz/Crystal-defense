@@ -9,7 +9,7 @@ public class CrystalHealth : MonoBehaviour
     public Slider healthBar;
 
     [Header("Max Health Amount :")]
-    [Range(0.1f, 10f)]
+    [Range(1f, 100f)]
     public float maxHealth;
 
     [Header("Enemy Damage Amount :")]
@@ -25,25 +25,39 @@ public class CrystalHealth : MonoBehaviour
 
     private void Start()
     {
+        healthBar.maxValue = maxHealth;
         isDamageable = true;
         currentHealth = maxHealth;
         healthBar.value = currentHealth;
     }
 
-    IEnumerator TakeDamage(float damage)
+    public void Update()
     {
+        if(currentHealth <= 0)
+        {
+            //Dood.
+        }
+    }
+
+
+
+    public IEnumerator TakeDamage(float damage)
+    {
+        Debug.Log(currentHealth);
         isDamageable = false;
-        yield return new WaitForSeconds(damageCooldownTime);
         currentHealth -= damage;
         healthBar.value = currentHealth;
+        yield return new WaitForSeconds(damageCooldownTime);
         isDamageable = true;
     }
 
-    public void OnCollisionEnter(Collision collision)
+    private void OnTriggerStay(Collider other)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        Debug.Log("Collision met : " + other);
+        if (other.gameObject.CompareTag("Enemy") && isDamageable && currentHealth > 0)
         {
-            TakeDamage(enemyDamageValue);
+            Debug.Log("TakeDamge IEnumerator;");
+            StartCoroutine(TakeDamage(enemyDamageValue));
         }
     }
 }
