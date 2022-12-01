@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Enemy))]
-public class EnemyHealth : MonoBehaviour
+public class EnemyHealth : MonoBehaviour, IDamageble, IKill
 {
     [SerializeField] float health = 100;
     [SerializeField] float ballistaDamage = 10;
@@ -38,24 +38,29 @@ public class EnemyHealth : MonoBehaviour
         if(other.tag == "Ballista")
         {
             
-            ProcessHit(ballistaDamage);
+            Damage(ballistaDamage);
         }
         else if (other.tag == "Turret")
         {
-            ProcessHit(turretDamage);
+            Damage(turretDamage);
         }
     }
 
-    private void ProcessHit(float damage)
+    public void Damage(float damage)
     {
         currentHealth = currentHealth - damage;
         healthBar.UpdateHealthBar(health, currentHealth);
 
         if (currentHealth <= 0)
         {
-            enemy.RewardGold();
-            health += difficultyRamp;
-            gameObject.SetActive(false);
+            Kill();
         }
+    }
+
+    public void Kill()
+    {
+        enemy.RewardGold();
+        health += difficultyRamp;
+        gameObject.SetActive(false);
     }
 }

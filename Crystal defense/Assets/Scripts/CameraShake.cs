@@ -7,6 +7,7 @@ public class CameraShake : MonoBehaviour
     public bool start = false;
     public float duration = 1f;
     public AnimationCurve curve;
+    public GameObject cameraObject;
 
     private void Update()
     {
@@ -18,18 +19,18 @@ public class CameraShake : MonoBehaviour
 
         IEnumerator Shaking()
         {
-            Vector3 startPosition = transform.position;
+            Vector3 startPosition = cameraObject.transform.position;
             float elapsedTime = 0f;
 
             while (elapsedTime < duration)
             {
                 elapsedTime += Time.deltaTime;
                 float strength = curve.Evaluate(elapsedTime / duration);
-                transform.position = startPosition + Random.insideUnitSphere * strength;
+                cameraObject.transform.position = startPosition + Random.insideUnitSphere * strength;
                 yield return null;
             }
 
-            transform.position = startPosition;
+            cameraObject.transform.position = startPosition;
         }
     }
 }
