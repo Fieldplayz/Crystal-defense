@@ -51,7 +51,7 @@ public class PauseManager : MonoBehaviour
     //Game wordt op pauze gezet.
     private void PauseGame()
     {
-        Cursor.visible = false;
+        Cursor.visible = true;
         Time.timeScale = 0;
         pausePanel.SetActive(true);
     }
@@ -59,7 +59,6 @@ public class PauseManager : MonoBehaviour
     //Game wordt weer aangezet en panel wordt weer wegehaald.
     private void ContinueGame()
     {
-        
         Time.timeScale = 1;
         pausePanel.SetActive(false);
     }
@@ -85,8 +84,7 @@ public class PauseManager : MonoBehaviour
 
     public void GoToMenuTimer()
     {
-        
-        SceneManager.LoadScene("MenuScreen");
+        SceneManager.LoadScene("SampleScene");
         
     }
 
