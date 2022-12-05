@@ -14,7 +14,7 @@ public class TargetLocator : MonoBehaviour
 
     private void Start()
     {
-       
+        projectileParticles.enableEmission = false;
     }
 
 
@@ -25,14 +25,16 @@ public class TargetLocator : MonoBehaviour
 
         if (enemies.Length > 0)
         {
-            FindClosestTarget();
-            AimWeapon();
+            if (enemies.Length > 0)
+            {
+                FindClosestTarget();
+                AimWeapon();
+            }
+            else
+            {
+                projectileParticles.enableEmission = false;
+            }
         }
-        else
-        {
-            projectileParticles.enableEmission = false;
-        }
-        
     }
 
     void FindClosestTarget()
@@ -76,5 +78,16 @@ public class TargetLocator : MonoBehaviour
     {
         var emissionModule = projectileParticles.emission;
         emissionModule.enabled = isActive;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+      
+        
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        
     }
 }
