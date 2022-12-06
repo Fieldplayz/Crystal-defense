@@ -23,8 +23,11 @@ public class CrystalHealth : MonoBehaviour
     [Header("Damage Effect :")]
     public GameObject damageEffect;
 
+    [HideInInspector]
     public float currentHealth;
-    public bool isDamageable;
+
+
+    private bool isDamageable;
 
     private void Start()
     {
